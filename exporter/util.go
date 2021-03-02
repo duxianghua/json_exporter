@@ -58,7 +58,9 @@ func SanitizeValue(s string) (float64, error) {
 	if s == "<nil>" {
 		return math.NaN(), nil
 	}
-	return value, fmt.Errorf(resultErr)
+	value = 0.0
+	return value, nil
+	// return value, fmt.Errorf(resultErr)
 }
 
 func CreateMetricsList(c config.Config) ([]JsonMetric, error) {
